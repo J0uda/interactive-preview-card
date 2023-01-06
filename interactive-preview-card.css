@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active,
+a:focus {
+    outline: none;
+}
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-dark-blue);
+    font-family: 'Overpass';
+}
+
+.container {
+    width: 350px;
+    height: 350px;
+    perspective: 1000px;
+}
+
+.container:hover>.card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.card {
+    background: #212832;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 35px;
+}
+
+.icon-star {
+    background: #293039;
+    padding: 12px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 1em;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.front p {
+    font-size: 14px;
+    width: 80%;
+    color: var(--medium-grey);
+    margin-bottom: 1.2em;
+}
+
+.front ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.front ul li {
+    color: var(--medium-grey);
+    background: #293039;
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 15px;
+    cursor: pointer;
+    margin-bottom: 1.5em;
+}
+
+button {
+    width: 80%;
+    height: 35px;
+    border-radius: 20px;
+    color: var(--white);
+    background: var(--orange);
+}
+
+.thanksImage {
+    width: 40%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.back-info {
+    text-align: center;
+    color: var(--orange);
+    font-size: 10px;
+    background-color: #293039;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 1.2em;
+}
+
+.back h1 {
+    font-weight: 400;
+}
+
+.back-description {
+    width: 80%;
+    text-align: center;
+    color: var(--medium-grey);
+    font-size: 12px;
+}
